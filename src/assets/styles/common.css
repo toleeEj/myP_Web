@@ -1,0 +1,75 @@
+/* Common Styles for the entire website */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color:#13132c;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Buttons */
+  button, .contact-button {
+    font-size: 1rem;
+    background-color: #05630b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover, .contact-button:hover {
+    background-color: #52ff80;
+  }
+  
+  /* Container for responsive width */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links li {
+      margin: 0.5rem 0;
+    }
+  
+    .cta-button {
+      margin-top: 1rem;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.2rem;
+    }
+  
+    .footer-content {
+      text-align: center;
+    }
+  
+    .contact-info p {
+      font-size: 0.9rem;
+    }
+  }
+  
