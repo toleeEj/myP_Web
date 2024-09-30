@@ -40,6 +40,7 @@ export default {
   name: "NavigationBar",
 };
 </script>
+
 <style scoped>
 .header {
   background-color: #1f2937; /* Darker background for a modern look */
@@ -147,29 +148,21 @@ export default {
   }
 
   .navbar {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to start */
-  }
-
-  .logo {
-    font-size: 1rem; /* Smaller logo font size */
+    flex-direction: row;
+    justify-content: space-between; /* Keep logo and button visible */
   }
 
   .nav-links {
-    flex-direction: column; /* Stack links vertically */
-    margin: 0.5rem 0; /* Margin between logo and links */
+    display: none; /* Hide navigation links on small devices */
   }
 
-  .nav-links li {
-    margin-left: 0; /* Remove left margin for mobile view */
-    margin: 0.3rem; /* Add space between links */
-    font-size: 1rem; /* Smaller font size for links */
+  .logo {
+    font-size: 1.5rem; /* Adjust logo size */
   }
 
   .contact-button {
     font-size: 1rem; /* Smaller button font size */
     padding: 0.3rem 0.5rem; /* Reduced button padding */
-    margin-left: 20rem;
   }
 }
 

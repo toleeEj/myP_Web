@@ -6,23 +6,23 @@
 
     <div class="content">
       <div class="photo">
-        <h1 class="headline">
-          Hello, I'm Tolesa
-          <p class="bio">
-            Full-Stack Developer <br />
-            passionate about creating modern webapplications.
-          </p>
-        </h1>
-        <img src="@/assets/profile-photo.jpg" alt="Your Name" />
+        <h1>Hello, I'm Tolesa</h1>
+        <p>
+          Full-Stack Developer <br />
+          passionate about creating modern web applications.
+        </p>
+        <div class="heroi">
+          <img src="@/assets/profile-photo.jpg" alt="Your Name" />
+        </div>
       </div>
       <div class="cta-buttons">
         <router-link to="/about-skills" class="cta-button"
-          >about me and my skills</router-link
+          >About Me and My Skills</router-link
         >
         <router-link to="/projects-certifications" class="cta-button"
           >See My Works</router-link
         >
-        <router-link to="/contact" class="cta-button">Contact Me</router-link>
+        <router-link to="/contact" class="cta-button">Contactme</router-link>
       </div>
     </div>
   </section>
@@ -53,7 +53,7 @@ export default {
   display: flex;
   align-items: center;
   color: white;
-  padding: 0 5rem;
+  padding: 0 5rem; /* Padding for larger screens */
   text-align: left;
   overflow: hidden;
 }
@@ -84,23 +84,7 @@ export default {
 .content {
   display: flex;
   flex-direction: column;
-}
-
-.headline {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeInUp 1s 0.5s forwards ease-out;
-  letter-spacing: 2px;
-}
-
-.bio {
-  font-size: 1.4rem;
-  margin-bottom: 2.5rem;
-  opacity: 0;
-  animation: fadeInUp 0.5s 0.5s forwards ease-out;
-  color: #e5e7eb;
+  width: 100%;
 }
 
 .cta-buttons {
@@ -120,54 +104,113 @@ export default {
 }
 
 .cta-button:hover {
-  color: #f43f5e; /* Vivid hover color */
-  transform: scale(1.15) rotate(-5deg); /* A more noticeable zoom with a slight rotation */
-  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.5); /* Glowing shadow */
+  color: #f43f5e;
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.5);
 }
 
 .photo {
-  align-items: right;
-  justify-content: center;
   display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
-.photo img {
-  width: auto;
-  height: 400px;
-  border-radius: 200px;
-  opacity: 0;
-  animation: fadeInUp 1s 1s forwards ease-in-out;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+.photo h1 {
+  margin-right: 50px;
+  font-size: 50px;
 }
 
-.photo:hover {
-  border-radius: 10px;
+/* Image styling */
+.heroi img {
+  width: 500px; /* Set your preferred width */
+  border-radius: 100px;
+  margin-left: 20px; /* Add space between image and content */
 }
 
-/* Responsive Design */
+/* Content styling */
+.photo {
+  flex: 1;
+}
 @media (max-width: 768px) {
   .home-section {
     flex-direction: column;
     height: auto; /* Allow for dynamic height */
-    padding: 1rem; /* Adjust padding for smaller screens */
-  }
-
-  .headline {
-    font-size: 2rem; /* Smaller headline font size */
-  }
-
-  .bio {
-    font-size: 1rem; /* Smaller bio font size */
+    padding: 2rem 1rem; /* Adjust padding for smaller screens */
   }
 
   .cta-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 0.5rem; /* Adjust gap for buttons */
-    justify-content: center;
+    flex-direction: column; /* Stack buttons on smaller screens */
+    gap: 1rem;
+    align-items: center;
   }
 
-  .photo img {
-    height: 250px; /* Smaller profile image */
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .photo {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  .photo h1 {
+    margin-right: 0; /* Remove right margin on small screens */
+    font-size: 2rem;
+  }
+
+  .heroi img {
+    width: 100%; /* Make the image responsive */
+    margin: 20px 0; /* Adjust margin */
+    border-radius: 50px;
+  }
+}
+
+/* For very small screens (portrait) */
+@media (max-width: 480px) {
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .photo h1 {
+    font-size: 1.75rem; /* Smaller heading size for very small screens */
+  }
+
+  .heroi img {
+    width: 90%; /* Further reduce image size */
+    margin: 10px auto; /* Center image on smaller screens */
+    border-radius: 20px;
+  }
+}
+
+/* Landscape mode optimization for phone rotation */
+@media (max-width: 812px) and (orientation: landscape) {
+  .cta-buttons {
+    flex-direction: row; /* Keep buttons in a row for landscape */
+    gap: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .photo {
+    flex-direction: row; /* Keep content in a row for landscape */
+    align-items: flex-start; /* Align items at the top */
+    padding: 10px;
+  }
+
+  .photo h1 {
+    font-size: 1.5rem; /* Reduce font size further in landscape */
+    margin-right: 20px;
+  }
+
+  .heroi img {
+    width: 300px; /* Smaller image in landscape */
+    margin: 10px 0; /* Adjust margin */
+    border-radius: 20px;
   }
 }
 
@@ -189,15 +232,6 @@ export default {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 </style>
